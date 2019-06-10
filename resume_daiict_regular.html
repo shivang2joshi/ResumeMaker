@@ -525,6 +525,10 @@
         //$('#education-table').sortable();
 
         /**/
+        setInterval(function(){ 
+            saveResume();
+        },300000);
+        
         document.body.onload = function () {
             document.getElementById('message').classList.remove('invisible');
             setTimeout(() => {
