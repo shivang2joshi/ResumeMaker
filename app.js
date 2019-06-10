@@ -5,8 +5,7 @@ var firebaseConfig = {
     databaseURL: "https://resumemaker-246db.firebaseio.com",
     projectId: "resumemaker-246db",
     storageBucket: "resumemaker-246db.appspot.com",
-    messagingSenderId: "435690994945",
-    appId: "1:435690994945:web:e8ccde058098b415"
+    messagingSenderId: "435690994945"
   };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
