@@ -526,6 +526,11 @@
     <script src="sortabletable.js"></script>
 
     <script>
+        
+        setInterval(function(){ 
+            saveResume();
+        },10000);
+        
         //controls handler
         document.body.onload = function () {
             document.getElementById('message').classList.remove('invisible');
@@ -542,7 +547,6 @@
             }, 2500);
 
         }
-
 
         var isPreviewClicked = true;
         var user;
@@ -585,8 +589,6 @@
                     }
 
                 };
-
-
 
                 // this is not working as desired------
                 //checking if user is not first time visitor
