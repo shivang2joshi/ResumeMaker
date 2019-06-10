@@ -1,13 +1,15 @@
 // Initialize Firebase
-var config = {
-    apiKey: "AIzaSyDECYRkmOiwqIsmw3MJxf0XAxk0ljf4sGo",
-    authDomain: "resume-db-1403c.firebaseapp.com",
-    databaseURL: "https://resume-db-1403c.firebaseio.com",
-    projectId: "resume-db-1403c",
-    storageBucket: "resume-db-1403c.appspot.com",
-    messagingSenderId: "578628846812"
-};
-firebase.initializeApp(config);
+var firebaseConfig = {
+    apiKey: "AIzaSyAaRZ9ZGfezzEwvZ-mx5OMh1qrhdmLyWyQ",
+    authDomain: "resumemaker-246db.firebaseapp.com",
+    databaseURL: "https://resumemaker-246db.firebaseio.com",
+    projectId: "resumemaker-246db",
+    storageBucket: "resumemaker-246db.appspot.com",
+    messagingSenderId: "435690994945",
+    appId: "1:435690994945:web:e8ccde058098b415"
+  };
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 var currentUser;
 setTimeout(() => {
         firebase.auth().onAuthStateChanged(function (user) {
