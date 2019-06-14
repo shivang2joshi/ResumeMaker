@@ -55,7 +55,7 @@ var quotes = {
         'author': 'Elon Musk'
     },
     5: {
-        'text': 'If it feels "I still am not prepared enough" then think once what the bloody company requires. You don\'t have to be a ranker, you have to be CONFIDENT. Be smart, prepare/revise only what requires.',
+        'text': 'If it feels "I am still not prepared enough" then think once what your desired company requires. You don\'t have to be a ranker, you have to be CONFIDENT. Be smart, prepare/revise only what requires.',
         'author': 'Shivang Joshi'
     },
     6: {
