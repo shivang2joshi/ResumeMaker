@@ -1,2 +1,2 @@
 # Resume Maker for the students of DA-IICT.
-Web Interface for making your resume for On-Campus Interviews.
+Web Interface for DA-IICT students for building resumes.
