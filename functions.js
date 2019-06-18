@@ -636,8 +636,11 @@ function addInternships() {
     cell.setAttribute('valign', 'top');
     cell.innerHTML = '<p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
         + newCellPlaceholder
-        + '</p><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()"><i>'
-        + newCellPlaceholder
+        + '</p><p><i>' 
+        + 'Guide: ' 
+        + '<span contenteditable="true" spellcheck="true" class="input-field head-field" onclick="selectAll()">'
+        +  newCellPlaceholder
+        + '</span>'
         + '</i></p>';
 
     cell = newrow.insertCell(-1);
@@ -660,8 +663,11 @@ function addProjects() {
     cell.setAttribute('class', 'w-20');
     cell.innerHTML = '<p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()"><b>'
         + newCellPlaceholder
-        + '</b></p><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()"><i>'
-        + newCellPlaceholder
+        + '</b></p><p><i>' 
+        + 'Guide: ' 
+        + '<span contenteditable="true" spellcheck="true" class="input-field head-field" onclick="selectAll()">'
+        +  newCellPlaceholder
+        + '</span>'
         + '</i></p>';
 
     cell = newrow.insertCell(-1);
