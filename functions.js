@@ -91,7 +91,7 @@ function printResume() {
         window.alert('you can not have Empty fields printed');
         return;
     }
-    var emailfield = document.getElementById('e-mail').innerText;
+    var emailfield = document.getElementById('e-mail').innerText.trim();
     if (!ValidateEmail(emailfield)) {
         window.alert('Invalid Email!');
         return;
@@ -613,7 +613,7 @@ function addSkills() {
     cell.setAttribute('spellcheck', 'true');
     cell.setAttribute('onclick', 'selectAll()');
     cell.innerHTML = newCellPlaceholder;
-    console.log('added Skill');
+    //console.log('added Skill');
 
     document.getElementById('add-skill').classList.add('invisible');
     document.getElementById('remove-skill').classList.remove('invisible');
@@ -621,7 +621,7 @@ function addSkills() {
 }
 
 function addInternships() {
-    var internshipstable = document.getElementById('internships-table').tBodies[0];
+   var internshipstable = document.getElementById('internships-table').tBodies[0];
     var lastrowindex = internshipstable.rows.length;
     var newrow = internshipstable.insertRow(lastrowindex);
 
@@ -634,23 +634,23 @@ function addInternships() {
 
     cell = newrow.insertCell(-1);
     cell.setAttribute('valign', 'top');
-    cell.innerHTML = '<p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
+    cell.innerHTML = '<div><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
         + newCellPlaceholder
-        + '</p><p><i>' 
+        + '</p></div><div><p><i>' 
         + 'Guide: ' 
         + '<span contenteditable="true" spellcheck="true" class="input-field head-field" onclick="selectAll()">'
         +  newCellPlaceholder
         + '</span>'
-        + '</i></p>';
+        + '</i></p></div>';
 
     cell = newrow.insertCell(-1);
     cell.setAttribute('valign', 'top');
     cell.setAttribute('class', 'w-20 text-right');
-    cell.innerHTML = '<p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
+    cell.innerHTML = '<div><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
         + newCellPlaceholder
-        + '</p><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
+        + '</p></div><div><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
         + newCellPlaceholder
-        + '</p>';
+        + '</p><div>';
 
 }
 
@@ -661,14 +661,14 @@ function addProjects() {
     var cell = newrow.insertCell(0);
     cell.setAttribute('valign', 'top');
     cell.setAttribute('class', 'w-20');
-    cell.innerHTML = '<p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()"><b>'
+    cell.innerHTML = '<div><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()"><b>'
         + newCellPlaceholder
-        + '</b></p><p><i>' 
+        + '</b></p></div><div><p><i>' 
         + 'Guide: ' 
         + '<span contenteditable="true" spellcheck="true" class="input-field head-field" onclick="selectAll()">'
         +  newCellPlaceholder
         + '</span>'
-        + '</i></p>';
+        + '</i></p><div>';
 
     cell = newrow.insertCell(-1);
     cell.setAttribute('valign', 'top');
@@ -676,16 +676,16 @@ function addProjects() {
     cell.setAttribute('spellcheck', 'true');
     cell.setAttribute('onclick', 'selectAll()');
     cell.setAttribute('class', 'w-60 input-field');
-    cell.innerHTML = '<p>' + newCellPlaceholder + '</p>';
+    cell.innerHTML = newCellPlaceholder;
 
     cell = newrow.insertCell(-1);
     cell.setAttribute('valign', 'top');
     cell.setAttribute('class', 'w-20 text-right');
-    cell.innerHTML = '<p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
+    cell.innerHTML = '<div><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
         + newCellPlaceholder
-        + '</p><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
+        + '</p></div><div><p contenteditable="true" spellcheck="true" class="input-field" onclick="selectAll()">'
         + newCellPlaceholder
-        + '</p>';
+        + '</p></div>';
 
 }
 function addSpace(element) {
