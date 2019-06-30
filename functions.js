@@ -583,7 +583,6 @@ function modifiedPaste() {
 
 //resume addButtons utility
 function addEducation() {
-    modifiedPaste();
     
     var newrow = document.getElementById('education-table').tBodies[0].insertRow(-1);
     var cell = newrow.insertCell(0);
@@ -615,10 +614,12 @@ function addEducation() {
     cell.innerHTML = removeButtonHTML('education-table');*/
     // -1 is for appending at last
     //console.log('added education');
+    
+    modifiedPaste();
 }
 
 function addSkills() {
-    modifiedPaste();
+   
     var skilltable = document.getElementById('skills-table').tBodies[0];
     var lastrowindex = skilltable.rows.length;
     var newrow = skilltable.insertRow(lastrowindex);
@@ -635,10 +636,12 @@ function addSkills() {
     document.getElementById('add-skill').classList.add('invisible');
     document.getElementById('remove-skill').classList.remove('invisible');
     //console.log('added skills');    
+    
+    modifiedPaste();
 }
 
 function addInternships() {
-    modifiedPaste();
+    
     
    var internshipstable = document.getElementById('internships-table').tBodies[0];
     var lastrowindex = internshipstable.rows.length;
@@ -671,10 +674,11 @@ function addInternships() {
         + newCellPlaceholder
         + '</p><div>';
 
+    modifiedPaste();
 }
 
 function addProjects() {
-    modifiedPaste();
+    
     var projectstable = document.getElementById('projects-table').tBodies[0];
     var lastrowindex = projectstable.rows.length;
     var newrow = projectstable.insertRow(lastrowindex);
@@ -707,6 +711,7 @@ function addProjects() {
         + newCellPlaceholder
         + '</p></div>';
 
+    modifiedPaste();
 }
 function addSpace(element) {
     element.parentNode.innerHTML = '<br style="padding-top:2rem;">' + element.parentNode.innerHTML;
