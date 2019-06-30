@@ -572,19 +572,51 @@ table:nth-child(n+2) tr:first-child{
         display: none;
     }
 }
+/* tooltip */
 
-
-/*
-.form-group {
-    border: 1px solid white;
-    border-radius: 20pt;
-    padding: 2rem 3rem;
-    background: white;
-    color: black;
+.tooltips{
+    display: inline-block;
+    position: relative;
 }
 
-.form-control form input {
-    width: 15rem;
+.tooltips::before, .tooltips::after{
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    transition: all .4s ease-in;
+}
+
+.tooltips::before{
+    /* for arrow */
+    content: "";
+    border-width: 10px 8px 0px 8px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    top: -6px;
+    z-index: 1000;
+}
+.tooltips::after{
+    content: attr(data-tooltip);
+    background: white;
+    color: grey;
+    font-weight: 500;
+    padding: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    width: 260px;
+    top: -74px;
+    margin-left: -100px;
+}
+
+.tooltips:hover::before, .tooltips:hover::after{
+    opacity: 1;
+}
+
+b{
+    font-weight: 500;
+}
+p ,tr td{
+    font-weight: 400;
 }
 
 /*---------------------------------------------------*/
