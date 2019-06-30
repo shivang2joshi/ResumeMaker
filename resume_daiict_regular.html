@@ -365,6 +365,15 @@
                                 <hr>
                             </div>
                         </div>
+                        
+                        <div class="text-center">
+                            <div class="tooltips" data-tooltip="Add space here to shift PROJECTS to next page">
+                                <button class="addButton" onclick="addSpace(this)">Add Space</button>
+                            </div>
+                            <button class="removeButton" onclick="removeSpace(this)">Remove Space</button>
+                        </div>
+                        
+                        
                         <div id="resume-page-2" class="row">
                             <div class="col-md-12">
                                 <table id="projects-table" class="w-100 section">
@@ -426,10 +435,15 @@
                                     </tfoot>
                                 </table>
                                 <hr>
+                                
+                                
                                 <div class="text-center">
-                                    <button class="addButton" onclick="addSpace(this)">Add Space</button>
+                                    <div class="tooltips" data-tooltip="Add space here to shift following to next page">
+                                        <button class="addButton" onclick="addSpace(this)">Add Space</button>
+                                    </div>
                                     <button class="removeButton" onclick="removeSpace(this)">Remove Space</button>
                                 </div>
+                                
                                 <table class="w-100 section">
                                     <thead>
                                         <tr>
@@ -566,7 +580,18 @@
                 // this is not working as desired------
                 //checking if user is not first time visitor
                 if (dbref != null) {
-                    loadResume();
+                    loadResume(function() {
+                        var editors = document.getElementsByClassName('input-field');
+                        for (var editor of editors) {
+                            editor.addEventListener('paste',function(e){
+                                e.preventDefault();
+
+                                var text = (e.originalEvent || e).clipboardData.getData('text/plain');
+
+                                this.innerText = text;
+                            });
+                        }
+                    }); //providing a callback function to load so that it runs after loading
                 } else
                     console.log("First time visitor | Default data loaded");
                 //for first time user
