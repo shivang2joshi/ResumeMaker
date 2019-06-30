@@ -568,9 +568,23 @@ function removeButtonHTML(tableid) {
     return '<button class="removeButton small-btn" onclick="removeRow(\'' + tableid + '\',this)">Remove</button>';
 }
 
+function modifiedPaste() {
+    var editors = document.getElementsByClassName('input-field');
+    for (var editor of editors) {
+        editor.addEventListener('paste',function(e){
+            e.preventDefault();
+
+            var text = (e.originalEvent || e).clipboardData.getData('text/plain');
+
+            this.innerText = text;
+        });
+    }
+}
+
 //resume addButtons utility
 function addEducation() {
-
+    modifiedPaste();
+    
     var newrow = document.getElementById('education-table').tBodies[0].insertRow(-1);
     var cell = newrow.insertCell(0);
     cell.setAttribute('contenteditable', "true");
@@ -604,6 +618,7 @@ function addEducation() {
 }
 
 function addSkills() {
+    modifiedPaste();
     var skilltable = document.getElementById('skills-table').tBodies[0];
     var lastrowindex = skilltable.rows.length;
     var newrow = skilltable.insertRow(lastrowindex);
@@ -623,6 +638,8 @@ function addSkills() {
 }
 
 function addInternships() {
+    modifiedPaste();
+    
    var internshipstable = document.getElementById('internships-table').tBodies[0];
     var lastrowindex = internshipstable.rows.length;
     var newrow = internshipstable.insertRow(lastrowindex);
@@ -657,6 +674,7 @@ function addInternships() {
 }
 
 function addProjects() {
+    modifiedPaste();
     var projectstable = document.getElementById('projects-table').tBodies[0];
     var lastrowindex = projectstable.rows.length;
     var newrow = projectstable.insertRow(lastrowindex);
