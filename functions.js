@@ -180,7 +180,7 @@ function previewResume() {
     return "preview successful";
 }
 
-function loadResume(template = -1, ref = null) {
+function loadResume(callback, template = -1, ref = null) {
 
     if (template == -1)
         template = document.getElementById('template-name').innerHTML;
@@ -291,6 +291,8 @@ function loadResume(template = -1, ref = null) {
             document.getElementById('awards-list')
                 .innerHTML = snapshot.child('awards').val();
 
+        callback();
+        
         return "user data loaded from latest saved database";
     }, function (error) {
         console.log("Error: " + error.code);
