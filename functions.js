@@ -58,8 +58,9 @@ function logout() {
     return "logout successful";
 }
 
-function selectAll() {
-    document.execCommand('selectAll', true, "replace this");
+function selectAll(e) {
+    if(e.innerText == "Click to select")
+        document.execCommand('selectAll', true, "replace this");
     //firefox doesn't allow keyboard operations with scripts
 }
 
@@ -576,7 +577,7 @@ function modifiedPaste() {
 
             var text = (e.originalEvent || e).clipboardData.getData('text/plain');
 
-            this.innerText = text;
+            this.innerText += text;
         });
     }
 }
